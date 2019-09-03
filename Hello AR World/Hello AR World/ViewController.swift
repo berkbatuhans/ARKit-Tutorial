@@ -59,6 +59,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         sphere.geometry?.firstMaterial?.specular.contents = UIColor.yellow
         sphere.position = SCNVector3(0, 0, 0)
         sceneView.scene.rootNode.addChildNode(sphere)
+        let rotateAction = SCNAction.rotate(by: 360.degreesToRadians(), around: SCNVector3(0,1,0), duration: 8)
+        sphere.runAction(rotateAction)
     }
     
     func drawBoxAt1200Hight(){
