@@ -60,7 +60,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         sphere.position = SCNVector3(0, 0, 0)
         sceneView.scene.rootNode.addChildNode(sphere)
         let rotateAction = SCNAction.rotate(by: 360.degreesToRadians(), around: SCNVector3(0,1,0), duration: 8)
-        sphere.runAction(rotateAction)
+        let rotateForeverAction = SCNAction.repeatForever(rotateAction)
+        sphere.runAction(rotateForeverAction)
     }
     
     func drawBoxAt1200Hight(){
